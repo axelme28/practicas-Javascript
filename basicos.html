@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos aperiam
+         facere molestias dignissimos quam id reiciendis, iste adipisci fuga 
+         asperiores, iusto dicta optio,
+         voluptates officiis voluptatem. Suscipit veritatis eveniet blanditiis! llllll
+    </h1>
+    <<script>
+        var hola = "hola mundo";
+        console.log(hola);
+        let hello =  "Hello world :)"
+        console.log(hello);
+        console.log(window);
+
+        /*el uso de var es solo si se quiere hacer una variable global pero ademas de eso este tipo
+        de declaracion de variables no respeta el poder declara por bloques a continuacion un ejemplo
+*/
+        // usando var para declarar variables
+        console.log("Usando var")
+        var musica = "Rock"
+        console.log("Este es el valor de la variable antes del bloque ",musica)
+        {
+            var musica = "pop"
+            console.log("Este es el valor de la variable dentro del bloque ",musica)
+        }
+        console.log("Este es el valor de la variable despues del bloque ",musica)
+        // cuando se declara con var no repeta bloques para eso se usa let 
+        
+        console.log("***************************************")
+        console.log("Usando let")
+        let music = "Rock"
+        console.log("Este es el valor de la variable antes del bloque ",music)
+        {
+            let music = "pop"
+            console.log("Este es el valor de la variable dentro del bloque ",music)
+        }
+        console.log("Este es el valor de la variable despues del bloque ",music)
+
+
+        // cadenas de texto
+        //decalrar una cadena de texto informal 
+        let nombre = "Axel"
+        let apellido = 'Mendez'
+        //declarando una cadena de texto formal
+        let saludo = new String("Hola Mundo");
+        let lorem  = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam numquam facilis voluptatum laborum, sit nihil ullam sequi quidem magnam voluptates ad recusandae explicabo hic dolore doloribus voluptatibus fugit modi dolorum."
+        console.log(nombre,apellido,saludo)
+        console.log(nombre.toUpperCase(),apellido.toLowerCase())
+        console.log(lorem.includes("amet"));
+
+    </script>
+</body>
+</html>
