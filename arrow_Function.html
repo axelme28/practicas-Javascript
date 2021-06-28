@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const saludar = nombre => console.log(`Hola ${nombre}`);
+
+        saludar("Axel")
+
+        const restar = function(a,b){
+            return a-b
+        }
+
+        console.log(restar(9,2));
+
+
+        const sumar = (a,b) => a+b
+
+        console.log(sumar(5,25));
+
+
+        const funcionDeVariasLineas = () => {
+            console.log("uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+
+        const numeros = [1,2,3,4,5]
+
+        numeros.forEach((elem,index) => console.log(`${elem} esta en la posicion ${index}`));
+
+        function perro(){
+            console.log(this);
+        }
+        perro();
+        
+        const dog = {
+            nombre: "Duque",
+            ladrar :() => {
+                console.log(this);
+            }
+        }
+
+        dog.ladrar()
+
+
+
+    </script>
+</body>
+</html>

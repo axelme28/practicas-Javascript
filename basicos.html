@@ -6,13 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos aperiam
-         facere molestias dignissimos quam id reiciendis, iste adipisci fuga 
-         asperiores, iusto dicta optio,
-         voluptates officiis voluptatem. Suscipit veritatis eveniet blanditiis! llllll
-    </h1>
+    
     <<script>
+        /*
         var hola = "hola mundo";
         console.log(hola);
         let hello =  "Hello world :)"
@@ -23,7 +19,8 @@
         de declaracion de variables no respeta el poder declara por bloques a continuacion un ejemplo
 */
         // usando var para declarar variables
-        console.log("Usando var")
+       
+       /* console.log("Usando var")
         var musica = "Rock"
         console.log("Este es el valor de la variable antes del bloque ",musica)
         {
@@ -54,6 +51,292 @@
         console.log(nombre,apellido,saludo)
         console.log(nombre.toUpperCase(),apellido.toLowerCase())
         console.log(lorem.includes("amet"));
+        */
+
+        //funcion declarada 
+
+        function estoEsUnaFuncion() {
+
+            console.log("uno");
+            console.log("dos")
+            console.log("Tres")
+            
+        }
+
+        function unaFuncionQueDevuleveValor() {
+            console.log("uno");
+            console.log("dos")
+            console.log("Tres")
+            return "La funcion a retornado una cadena de texto"
+        }
+
+        let valorDeFucion = unaFuncionQueDevuleveValor();
+
+        console.log(valorDeFucion);
+
+        function saludar(nombre = "Desconocido",edad = 0) {
+            console.log(`Hola mi nombre es ${nombre} y  tengo ${edad} anos`)
+
+            
+        }
+        saludar("Axel",19)
+        saludar();
+
+        //funciones declaradas VS no declaradas 
+
+        funcionDeclarada();
+        function funcionDeclarada() {
+            console.log("Esto es una funcion declarada, puede invocarse en cualquier parte de nuestro codigo incluso antes de que la funcion sea declarada")
+
+            
+        }
+        funcionDeclarada()
+
+        const funcionExpresada = function () {
+            console.log("Esto es una funcion expresada, esto quiere decir que si la invocamos antes de declararla nos dara error")
+        }
+
+
+        //ARRAYS 
+        const a = []
+
+        const b = [1,true,"HOLA",["A","B","C"]]
+
+        console.log(a)
+        console.log(b)
+        console.log(b[2])
+        console.log(b[3])
+        console.log(b[3][2])
+
+        const colores = ["Azul","Negro","Rojo"];
+
+        console.log(colores)
+
+        //metodo push 
+
+        colores.push("verde")
+        console.log(colores)
+
+        //metod pop
+
+        colores.pop()
+        console.log(colores)
+        
+
+        colores.forEach(function(el,index) {
+            console.log(`<li id = "${index}">${el}</li>`)
+        }) 
+            
+
+            //Objetos 
+
+            /*Dentro de un objeto a las variables se les llama 
+            ATRIBUTOS/PROPIEDADES y a las funciones se les llaman METODOS*/
+
+        const juan  ={
+            nombre: "Juan",
+            apellido: "Perez",
+            edad: 21,
+            pasatiempos: ["correr", "bailar"],
+            soltero: true,
+            contacto : {
+                email: "jdjdjdjd@gmail.com",
+                facebook: "lalalala"
+            },
+            saludar : function() {
+                console.log("Hola :)");
+            },
+            decirMiNombre: function() {
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido}`)
+            }
+        }
+
+        console.log(juan)
+
+        console.log(juan.nombre)
+
+        juan.saludar()
+
+        console.log(juan.pasatiempos[0])
+
+        juan.decirMiNombre()
+
+        console.log(juan.soltero);
+        
+        //CONDICIONALES 
+        /*if - else*/
+
+
+        let edad = 18
+
+        if (edad >= 18){
+            console.log("Eres mayor de edad");
+        }else {
+            console.log("Eres menor de edad");
+        }
+        
+        /*if - else if - else */
+
+        let hora = 0;
+
+        if ((hora>=0)&&(hora<=5)){
+
+            console.log("Dejame Dormir :(");
+        }else if((hora>=6)&&(hora<=11)){
+
+            console.log("Buenos Dias");
+        }else if((hora>=12)&&(hora<=18)){
+
+            console.log("Buenas Tardes");
+        }else if ((hora>=19)&&(hora<=23)){
+
+            console.log("Buenas Noches");
+        }
+
+        //OPERADOR TERNARIO(CONDICION)? verdadero : falsa
+
+        console.log("Operador Ternario");
+
+        let eresMayor  = (edad >= 18)
+        ? "Eres Mayor de Edad"
+        : "Eres Menor de edad"
+
+        console.log(eresMayor);
+
+        //switch - case 
+
+        /*domingo - 0
+        lunes 1
+        martes 2
+        miercoles 3
+        jueves 4
+        viernes 5
+        sabado 6*/
+       /* let dia = 10
+
+        switch (dia) {
+            case 0:
+                console.log("Domingo");
+                break;
+            case 1:
+                console.log("Lunes");
+                break
+            case 2:
+                console.log("Martes");
+                break
+            case 3: 
+                console.log("Miercoles");
+                break
+            case 4:
+                console.log("Jueves");
+                break
+            case 5:
+                console.log("Viernes");
+                break
+            case 6:
+                console.log("Sabado");
+                break
+            default:
+                console.log(`El dia ${dia} no existe`);
+                break;
+        }
+
+        //bucles 
+
+
+        const axel = {
+            nombre: "Axel",
+            apellido: "Mendez",
+            edad: 19
+        }
+        /*El for - in permite recorree cada una de las propiedades de un objeto*/
+       /* for (const propiedad in axel) {
+            console.log(`Key: ${propiedad}, Vaule ${axel[propiedad]}`);
+            
+        }
+
+        let numeros = [10,20,30,40,50,60,70,80,90]
+        for (const num of numeros) {
+            console.log(num);
+        }
+        /*El for - of nos permite recorrer un elemento cuando sea iterable
+        como arrays, Strings*/
+        /*let hola = "Hola Mundo"
+
+        for (const caracter of hola) {
+            console.log(caracter);
+        }
+
+        /*Manejo de errores*/
+
+        /*try {
+            console.log("En el Try se agrega el codigo a evaluar");
+            lalala
+            console.log("Segundo mensaje del Try");
+        } catch (error) {
+            console.log("Catch, captura cualquier error surgido o lanzado en el Try");  
+            console.log(error);          
+        }finally{
+            console.log("El bloque Finally se ejecutara siempre al final de un bloque Try - Catch");
+        }
+
+
+        try {
+            let num = "lo"
+            if(isNaN(num)){
+                throw new Error("El caracter Introducido no es un numero")
+            }
+            console.log(num*num);
+        } catch (error) {
+            console.log(`Se produjo el siguiente error: ${error}`);
+        }
+            */
+        // BREAK y CONTINUE
+        /* let numeros = [1,2,3,4,5,6,7,8,9,0]
+
+        for (let i=0; i < numeros.length; i++) {
+            if ((i%2)===0){
+                console.log(`El numero ${i} es par`);
+            }else {
+                console.log(`El numero ${i} es inpar`);
+            }
+        }
+
+        for (let i=0;i<numeros.length; i++){
+            if (i===5){
+                break
+            }
+            console.log(numeros[i]);
+        }
+        console.log("------------------");
+        for (let i=0;i<numeros.length; i++){
+            if (i===5){
+                continue
+            }
+            console.log(numeros[i]);
+        }*/
+
+        //Drestructuracion 
+        const numeros = [1,2,3]
+        
+        //SIN DESTRUCTURACION
+        let uno = numeros[0],
+            dos = numeros[1],
+            tres = numeros[2];
+        console.log(uno,dos,tres);
+
+        //SIN DESTRUCTURACION 
+        const [one,two,three] = numeros;
+        console.log(one,two,three);
+
+        const persona = {
+            name: "Axel",
+            age : 20,
+            lastName: "Mendez"
+        }
+
+        const {name,age,lastName} = persona;
+        console.log(name,lastName,age);
 
     </script>
 </body>
